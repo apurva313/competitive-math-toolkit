@@ -1,4 +1,3 @@
-
 # **Competitive Math Toolkit** 🚀  
 *A high-performance math library optimized for competitive programming.*
 
