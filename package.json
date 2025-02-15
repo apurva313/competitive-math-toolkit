@@ -1,0 +1,17 @@
+{
+    "name": "competitive-math-toolkit",
+    "version": "1.0.0",
+    "description": "A collection of math utilities optimized for competitive programming.",
+    "main": "index.js",
+    "scripts": {
+      "test": "node tests/test_number_theory.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/apurva313/competitive-math-toolkit.git"
+    },
+    "keywords": ["math", "competitive programming", "algorithms"],
+    "author": "Apurva Kumar",
+    "license": "MIT"
+  }
+  
