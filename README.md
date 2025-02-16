@@ -6,7 +6,7 @@
 ![stars](https://img.shields.io/github/stars/apurva313/competitive-math-toolkit?style=social)  
 
 ## **📌 Features**
-✔️ Number Theory: GCD, LCM, Modular Exponentiation, Modular Inverse, Prime Sieve  
+✔️ Number Theory: GCD, LCM, Modular Exponentiation, Modular Inverse, Prime Sieve, Chinese Remainder Theorem  
 ✔️ Combinatorics: Factorial, nCr (Combinations), Catalan Numbers  
 ✔️ Matrix Exponentiation: Fast Fibonacci, Solving Recurrence Relations  
 ✔️ Graph Math: Eulerian Path Detection  
