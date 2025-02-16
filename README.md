@@ -62,6 +62,16 @@ console.log(mathToolkit.countEulerianPaths(graph)); // Output: true
 
 ---
 
+### **5️⃣ Chinese Remainder Theorem**
+```js
+const num = [3, 5, 7];
+const rem = [2, 3, 2];
+
+console.log(mathToolkit.chineseRemainderTheorem(num, rem)); // Output: 23
+```
+
+---
+
 ## **📜 API Reference**
 | Function | Description |
 |----------|-------------|
@@ -74,6 +84,7 @@ console.log(mathToolkit.countEulerianPaths(graph)); // Output: true
 | `nCr(n, r, mod)` | Returns nCr (binomial coefficient) modulo `mod` |
 | `nthFibonacci(n, mod)` | Returns nth Fibonacci number using Matrix Exponentiation |
 | `countEulerianPaths(graph)` | Checks if a given graph has an Eulerian path |
+| `chineseRemainderTheorem(num, rem)` | Solves a system of simultaneous congruences using the Chinese Remainder Theorem |
 
 ---
 
