@@ -18,6 +18,6 @@
     "author": "Apurva Kumar",
     "license": "MIT",
     "dependencies": {
-        "competitive-math-toolkit": "^1.0.0"
+        "competitive-math-toolkit": "^1.0.2"
     }
 }
