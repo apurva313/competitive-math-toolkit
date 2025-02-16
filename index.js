@@ -4,6 +4,7 @@ const matrixMath = require('./src/matrix_math');
 const fibonacci = require('./src/fibonacci');
 const graphMath = require('./src/graph_math');
 const  chineseRemainderTheorem  = require('./src/chineseRemainderTheorem');
+const BitwiseOperations = require('./src/bitwiseOperations');
 
 module.exports = {
     ...numberTheory,
@@ -11,5 +12,6 @@ module.exports = {
     ...matrixMath,
     ...fibonacci,
     ...graphMath,
-    ...chineseRemainderTheorem
+    ...chineseRemainderTheorem,
+    ...BitwiseOperations
 };
