@@ -38,6 +38,7 @@ console.log(mathToolkit.sieve(50)); // Output: [2, 3, 5, 7, 11, 13, ...]
 console.log(mathToolkit.isDivisible(10, 5)); // Output: "Yes"
 console.log(mathToolkit.findDivisors(10)); // Output: [1, 2, 5, 10]
 console.log(mathToolkit.primeFactorization(60)); // Output: [2, 2, 3, 5]
+console.log(mathToolkit.isPrime(13)); // Output: true
 ```
 
 ---
@@ -129,6 +130,10 @@ console.log(mathToolkit.hexToBinary("F")); // Output: "1111"
 | `modExp(base, exp, mod)`            | Fast exponentiation (base^exp % mod)                                            |
 | `modInverse(a, mod)`                | Finds modular inverse using Extended Euclidean Algorithm                        |
 | `sieve(n)`                          | Returns all prime numbers up to `n` using Sieve of Eratosthenes                 |
+| `isDivisible(number, divisor)`      | Checks if `number` is divisible by `divisor`. Returns `"Yes"` or `"No"`.        |
+| `findDivisors(number)`              | Returns an array of all divisors of `number`.                                   |
+| `primeFactorization(number)`        | Returns an array of prime factors of `number`.                                  |
+| `isPrime(number)`                   | Checks if `number` is prime. Returns `true` or `false`.                         |
 | `factorial(n, mod)`                 | Returns factorial of `n` modulo `mod`                                           |
 | `nCr(n, r, mod)`                    | Returns nCr (binomial coefficient) modulo `mod`                                 |
 | `nthFibonacci(n, mod)`              | Returns nth Fibonacci number using Matrix Exponentiation                        |
@@ -142,18 +147,18 @@ console.log(mathToolkit.hexToBinary("F")); // Output: "1111"
 | `rightShift(a, n)`                  | Shifts bits of `a` to the right by `n` positions (signed shift)                 |
 | `countSetBits(num)`                 | Counts the number of 1s in the binary representation of a number                |
 | `isPowerOfTwo(num)`                 | Checks if a number is a power of two                                            |
-| `setBit(num, pos)` | Sets the bit at position `pos` in `num` to 1 |
-| `clearBit(num, pos)` | Clears the bit at position `pos` in `num` (sets to 0) |
-| `toggleBit(num, pos)` | Toggles the bit at position `pos` in `num` |
-| `checkBit(num, pos)` | Checks if the bit at position `pos` is 1 |
-| `decimalToBinary(num)` | Converts a decimal number to binary (as a string) |
-| `binaryToDecimal(str)` | Converts a binary string to decimal |
-| `decimalToHex(num)` | Converts a decimal number to hexadecimal (as a string) |
-| `hexToDecimal(str)` | Converts a hexadecimal string to decimal |
-| `decimalToOctal(num)` | Converts a decimal number to octal (as a string) |
-| `octalToDecimal(str)` | Converts an octal string to decimal |
-| `binaryToHex(str)` | Converts a binary string to hexadecimal |
-| `hexToBinary(str)` | Converts a hexadecimal string to binary |
+| `setBit(num, pos)`                  | Sets the bit at position `pos` in `num` to 1                                    |
+| `clearBit(num, pos)`                | Clears the bit at position `pos` in `num` (sets to 0)                           |
+| `toggleBit(num, pos)`               | Toggles the bit at position `pos` in `num`                                      |
+| `checkBit(num, pos)`                | Checks if the bit at position `pos` is 1                                        |
+| `decimalToBinary(num)`              | Converts a decimal number to binary (as a string)                               |
+| `binaryToDecimal(str)`              | Converts a binary string to decimal                                             |
+| `decimalToHex(num)`                 | Converts a decimal number to hexadecimal (as a string)                          |
+| `hexToDecimal(str)`                 | Converts a hexadecimal string to decimal                                        |
+| `decimalToOctal(num)`               | Converts a decimal number to octal (as a string)                                |
+| `octalToDecimal(str)`               | Converts an octal string to decimal                                             |
+| `binaryToHex(str)`                  | Converts a binary string to hexadecimal                                         |
+| `hexToBinary(str)`                  | Converts a hexadecimal string to binary                                         |
 
 ---
 
