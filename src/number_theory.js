@@ -62,4 +62,25 @@ function findDivisors(num) {
     return divisors;
 }
 
-module.exports = { gcd, lcm, modExp, modInverse, sieve, isDivisible, findDivisors };
+// Prime Factorization using Sieve (Precompute Smallest Prime Factor)
+function primeFactorization(n) {
+    let spf = Array(n + 1).fill(0);
+    for (let i = 2; i <= n; i++) spf[i] = i;
+    
+    for (let i = 2; i * i <= n; i++) {
+        if (spf[i] === i) {
+            for (let j = i * i; j <= n; j += i) {
+                if (spf[j] === j) spf[j] = i;
+            }
+        }
+    }
+    
+    let factors = [];
+    while (n !== 1) {
+        factors.push(spf[n]);
+        n /= spf[n];
+    }
+    return factors;
+}
+
+module.exports = { gcd, lcm, modExp, modInverse, sieve, isDivisible, findDivisors, primeFactorization };
