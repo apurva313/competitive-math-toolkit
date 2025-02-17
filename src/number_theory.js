@@ -46,4 +46,20 @@ function sieve(n) {
     return primes.map((isPrime, num) => isPrime ? num : null).filter(x => x);
 }
 
-module.exports = { gcd, lcm, modExp, modInverse, sieve };
+// Check if a number is divisible by another number
+function isDivisible(num, divisor) {
+    return num % divisor === 0 ? "Yes" : "No";
+}
+
+// Find all numbers that divide 'n'
+function findDivisors(num) {
+    let divisors = [];
+    for (let i = 1; i <= num; i++) {
+        if (num % i === 0) {
+            divisors.push(i);
+        }
+    }
+    return divisors;
+}
+
+module.exports = { gcd, lcm, modExp, modInverse, sieve, isDivisible, findDivisors };
