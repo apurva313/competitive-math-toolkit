@@ -1,3 +1,4 @@
+const { modInverse } = require('./number_theory');
 function factorial(n, mod = 1e9 + 7) {
     let fact = 1;
     for (let i = 2; i <= n; i++) {
@@ -11,4 +12,9 @@ function nCr(n, r, mod = 1e9 + 7) {
     return (factorial(n, mod) * modInverse(factorial(r, mod), mod) * modInverse(factorial(n - r, mod), mod)) % mod;
 }
 
-module.exports = { factorial, nCr };
+function nPr(n, r) {
+    if (n < r) return 0;
+    return factorial(n) / factorial(n - r);
+}
+
+module.exports = { factorial, nCr, nPr };
