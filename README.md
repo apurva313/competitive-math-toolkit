@@ -39,6 +39,18 @@ console.log(mathToolkit.isDivisible(10, 5)); // Output: "Yes"
 console.log(mathToolkit.findDivisors(10)); // Output: [1, 2, 5, 10]
 console.log(mathToolkit.primeFactorization(60)); // Output: [2, 2, 3, 5]
 console.log(mathToolkit.isPrime(13)); // Output: true
+console.log(mathToolkit.modAdd(10, 15, 7)); // Output: 4
+console.log(mathToolkit.modSubtract(10, 15, 7)); // Output: 2
+console.log(mathToolkit.modMultiply(10, 15, 7)); // Output: 1
+console.log(mathToolkit.modInverse(3, 11)); // Output: 4
+console.log(mathToolkit.modDivide(10, 5, 7)); // Output: 2
+console.log(mathToolkit.nthRoot(3, 27)); // Output: 3
+console.log(mathToolkit.isPerfectSquare(25)); // Output: true
+console.log(mathToolkit.isPerfectCube(27)); // Output: true
+console.log(mathToolkit.binaryExponentiation(2, 10, 1000000007)); // Output: 1024
+console.log(mathToolkit.isCoprime(14, 25)); // Output: true
+console.log(mathToolkit.sumOfDivisors(12)); // Output: 28
+console.log(mathToolkit.countPrimes(50)); // Output: 15
 ```
 
 ---
@@ -48,6 +60,7 @@ console.log(mathToolkit.isPrime(13)); // Output: true
 ```js
 console.log(mathToolkit.factorial(5)); // Output: 120
 console.log(mathToolkit.nCr(5, 2)); // Output: 10
+console.log(mathToolkit.nPr(5, 2)); // Output: 20
 ```
 
 ---
@@ -123,42 +136,55 @@ console.log(mathToolkit.hexToBinary("F")); // Output: "1111"
 
 ## **📜 API Reference**
 
-| Function                            | Description                                                                     |
-| ----------------------------------- | ------------------------------------------------------------------------------- |
-| `gcd(a, b)`                         | Returns the Greatest Common Divisor (GCD) of two numbers                        |
-| `lcm(a, b)`                         | Returns the Least Common Multiple (LCM) of two numbers                          |
-| `modExp(base, exp, mod)`            | Fast exponentiation (base^exp % mod)                                            |
-| `modInverse(a, mod)`                | Finds modular inverse using Extended Euclidean Algorithm                        |
-| `sieve(n)`                          | Returns all prime numbers up to `n` using Sieve of Eratosthenes                 |
-| `isDivisible(number, divisor)`      | Checks if `number` is divisible by `divisor`. Returns `"Yes"` or `"No"`.        |
-| `findDivisors(number)`              | Returns an array of all divisors of `number`.                                   |
-| `primeFactorization(number)`        | Returns an array of prime factors of `number`.                                  |
-| `isPrime(number)`                   | Checks if `number` is prime. Returns `true` or `false`.                         |
-| `factorial(n, mod)`                 | Returns factorial of `n` modulo `mod`                                           |
-| `nCr(n, r, mod)`                    | Returns nCr (binomial coefficient) modulo `mod`                                 |
-| `nthFibonacci(n, mod)`              | Returns nth Fibonacci number using Matrix Exponentiation                        |
-| `countEulerianPaths(graph)`         | Checks if a given graph has an Eulerian path                                    |
-| `chineseRemainderTheorem(num, rem)` | Solves a system of simultaneous congruences using the Chinese Remainder Theorem |
-| `and(a, b)`                         | Computes the bitwise AND of two numbers                                         |
-| `or(a, b)`                          | Computes the bitwise OR of two numbers                                          |
-| `xor(a, b)`                         | Computes the bitwise XOR of two numbers                                         |
-| `not(a)`                            | Computes the bitwise NOT (1's complement) of a number                           |
-| `leftShift(a, n)`                   | Shifts bits of `a` to the left by `n` positions                                 |
-| `rightShift(a, n)`                  | Shifts bits of `a` to the right by `n` positions (signed shift)                 |
-| `countSetBits(num)`                 | Counts the number of 1s in the binary representation of a number                |
-| `isPowerOfTwo(num)`                 | Checks if a number is a power of two                                            |
-| `setBit(num, pos)`                  | Sets the bit at position `pos` in `num` to 1                                    |
-| `clearBit(num, pos)`                | Clears the bit at position `pos` in `num` (sets to 0)                           |
-| `toggleBit(num, pos)`               | Toggles the bit at position `pos` in `num`                                      |
-| `checkBit(num, pos)`                | Checks if the bit at position `pos` is 1                                        |
-| `decimalToBinary(num)`              | Converts a decimal number to binary (as a string)                               |
-| `binaryToDecimal(str)`              | Converts a binary string to decimal                                             |
-| `decimalToHex(num)`                 | Converts a decimal number to hexadecimal (as a string)                          |
-| `hexToDecimal(str)`                 | Converts a hexadecimal string to decimal                                        |
-| `decimalToOctal(num)`               | Converts a decimal number to octal (as a string)                                |
-| `octalToDecimal(str)`               | Converts an octal string to decimal                                             |
-| `binaryToHex(str)`                  | Converts a binary string to hexadecimal                                         |
-| `hexToBinary(str)`                  | Converts a hexadecimal string to binary                                         |
+| Function                             | Description                                                                     |
+| ------------------------------------ | ------------------------------------------------------------------------------- |
+| `gcd(a, b)`                          | Returns the Greatest Common Divisor (GCD) of two numbers                        |
+| `lcm(a, b)`                          | Returns the Least Common Multiple (LCM) of two numbers                          |
+| `modExp(base, exp, mod)`             | Fast exponentiation (base^exp % mod)                                            |
+| `modInverse(a, mod)`                 | Finds modular inverse using Extended Euclidean Algorithm                        |
+| `sieve(n)`                           | Returns all prime numbers up to `n` using Sieve of Eratosthenes                 |
+| `isDivisible(number, divisor)`       | Checks if `number` is divisible by `divisor`. Returns `"Yes"` or `"No"`.        |
+| `findDivisors(number)`               | Returns an array of all divisors of `number`.                                   |
+| `primeFactorization(number)`         | Returns an array of prime factors of `number`.                                  |
+| `isPrime(number)`                    | Checks if `number` is prime. Returns `true` or `false`.                         |
+| `factorial(n, mod)`                  | Returns factorial of `n` modulo `mod`                                           |
+| `nCr(n, r, mod)`                     | Returns nCr (binomial coefficient) modulo `mod`                                 |
+| `nthFibonacci(n, mod)`               | Returns nth Fibonacci number using Matrix Exponentiation                        |
+| `modAdd(a, b, m)`                    | Computes \( (a + b) \mod m \)                                                   |
+| `modSubtract(a, b, m)`               | Computes \( (a - b) \mod m \)                                                   |
+| `modMultiply(a, b, m)`               | Computes \( (a \times b) \mod m \)                                              |
+| `modInverse(a, m)`                   | Computes the modular inverse of \( a \) under modulo \( m \)                    |
+| `modDivide(a, b, m)`                 | Computes \( (a / b) \mod m \) using modular inverse                             |
+| `nthRoot(n, a)`                      | Computes the \( n \)-th root of \( a \)                                         |
+| `isPerfectSquare(n)`                 | Checks if \( n \) is a perfect square                                           |
+| `isPerfectCube(n)`                   | Checks if \( n \) is a perfect cube                                             |
+| `binaryExponentiation(base, exp, m)` | Computes \( \text{base}^{\text{exp}} \mod m \) using fast exponentiation        |
+| `nPr(n, r)`                          | Computes permutations \( P(n, r) \)                                             |
+| `isCoprime(a, b)`                    | Checks if two numbers are coprime (i.e., their GCD is 1)                        |
+| `sumOfDivisors(n)`                   | Computes the sum of all divisors of \( n \)                                     |
+| `countPrimes(n)`                     | Counts the number of prime numbers up to \( n \)                                |
+| `countEulerianPaths(graph)`          | Checks if a given graph has an Eulerian path                                    |
+| `chineseRemainderTheorem(num, rem)`  | Solves a system of simultaneous congruences using the Chinese Remainder Theorem |
+| `and(a, b)`                          | Computes the bitwise AND of two numbers                                         |
+| `or(a, b)`                           | Computes the bitwise OR of two numbers                                          |
+| `xor(a, b)`                          | Computes the bitwise XOR of two numbers                                         |
+| `not(a)`                             | Computes the bitwise NOT (1's complement) of a number                           |
+| `leftShift(a, n)`                    | Shifts bits of `a` to the left by `n` positions                                 |
+| `rightShift(a, n)`                   | Shifts bits of `a` to the right by `n` positions (signed shift)                 |
+| `countSetBits(num)`                  | Counts the number of 1s in the binary representation of a number                |
+| `isPowerOfTwo(num)`                  | Checks if a number is a power of two                                            |
+| `setBit(num, pos)`                   | Sets the bit at position `pos` in `num` to 1                                    |
+| `clearBit(num, pos)`                 | Clears the bit at position `pos` in `num` (sets to 0)                           |
+| `toggleBit(num, pos)`                | Toggles the bit at position `pos` in `num`                                      |
+| `checkBit(num, pos)`                 | Checks if the bit at position `pos` is 1                                        |
+| `decimalToBinary(num)`               | Converts a decimal number to binary (as a string)                               |
+| `binaryToDecimal(str)`               | Converts a binary string to decimal                                             |
+| `decimalToHex(num)`                  | Converts a decimal number to hexadecimal (as a string)                          |
+| `hexToDecimal(str)`                  | Converts a hexadecimal string to decimal                                        |
+| `decimalToOctal(num)`                | Converts a decimal number to octal (as a string)                                |
+| `octalToDecimal(str)`                | Converts an octal string to decimal                                             |
+| `binaryToHex(str)`                   | Converts a binary string to hexadecimal                                         |
+| `hexToBinary(str)`                   | Converts a hexadecimal string to binary                                         |
 
 ---
 
